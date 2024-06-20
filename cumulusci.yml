@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.88.0'
+project:
+    name: MK-Edu-20-June
+    package:
+        name: MK-Edu-20-June
+        api_version: '61.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/MK-Edu-20-June/tests
+            options:
+                outputdir: robot/MK-Edu-20-June/results
+
+    robot_testdoc:
+        options:
+            path: robot/MK-Edu-20-June/tests
+            output: robot/MK-Edu-20-June/doc/MK-Edu-20-June_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
